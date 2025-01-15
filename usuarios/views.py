@@ -23,5 +23,5 @@ def login(request):
 def home(request):
     return render(request, 'usuarios/home.html')
 
-def perfil(perfil):
-    return HttpResponse('Perfi')
+def perfil(request):
+    return render(request, 'usuarios/perfil.html')
