@@ -20,5 +20,8 @@ def login(request):
         else:
             return HttpResponse('Credenciais invalidas!')
 
-def home(home):
-    return HttpResponse('Seja bem vindo, seu vacilão!!')
+def home(request):
+    return render(request, 'usuarios/home.html')
+
+def perfil(perfil):
+    return HttpResponse('Perfi')
