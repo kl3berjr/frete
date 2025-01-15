@@ -19,3 +19,6 @@ def login(request):
             return HttpResponse('Sucesso!')
         else:
             return HttpResponse('Credenciais invalidas!')
+
+def home(home):
+    return HttpResponse('Seja bem vindo, seu vacilão!!')
