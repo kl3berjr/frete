@@ -17,9 +17,9 @@ def login(request):
 
         if user:
             login_django(request, user)
-            return HttpResponse( {'success_message': 'Sucesso!'})
+            return HttpResponse('Sucesso!')
         else:
-            return render(request, 'usuarios/login.html', {'error_message': 'E-mail ou senha inválidos!'})
+            return HttpResponse('Erro')
 
 
 ######## Pagina de cadastro ########
