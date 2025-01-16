@@ -1,3 +1,5 @@
+{% extends 'usuarios/home.html' %}
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -8,22 +10,36 @@
     <title>Login</title>
 </head>
 <body>
-    <div class="container">
-        <form action="{% url 'login' %}" method="POST">
-            {% csrf_token %}
-            <div class="input-email">
-                <label for="useremail">Email</label>
-                <input type="email" id="useremail" name="email">
+    {% block body %}
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <h1 class="mb-4 text-center">Login</h1>
+                <form action="{% url 'login' %}" method="POST">
+                    {% csrf_token %}
+                    <!-- Campo de Email -->
+                    <div class="form-floating mb-3">
+                        <input class="form-control" type="email" id="useremail" name="email" placeholder="Digite seu email" aria-required="true" required />
+                        <label for="useremail">Email</label>
+                        <div class="invalid-feedback">Por favor, insira um email válido.</div>
+                    </div>
+    
+                    <!-- Campo de Senha -->
+                    <div class="form-floating mb-3">
+                        <input class="form-control" type="password" id="userpassword" name="senha" placeholder="Digite sua senha" aria-required="true" required/>
+                        <label for="userpassword">Senha</label>
+                        <div class="invalid-feedback">Por favor, insira sua senha.</div>
+                    </div>
+    
+                    <!-- Botão de Login -->
+                    <div class="d-grid">
+                        <button class="btn btn-primary btn-lg" type="submit">Login</button>
+                    </div>
+                </form>
             </div>
-            <div class="input-password">
-                <label for="userpassword">Senha</label>
-                <input type="password" id="userpassword" name="senha">
-            </div>
-
-            <div class="login-button">
-                <button class="login-b" type="submit">Login</button>
-            </div>
-        </form>
+        </div>
     </div>
+    {% endblock body %}
+    
 </body>
 </html>
