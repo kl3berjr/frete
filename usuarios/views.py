@@ -2,7 +2,8 @@ from django.shortcuts import render
 from django.http.response import HttpResponse
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
-from django.contrib.auth import login as login_django
+from django.contrib import messages
+from django.contrib.auth import login as login_django, logout as logout_django
 
 ######## Pagino de login, ta dando erro essa bosta ########
 def login(request):
@@ -12,13 +13,13 @@ def login(request):
         email = request.POST.get('email')
         senha = request.POST.get('senha')
 
-        user = authenticate(request, username=email.useremail, password=senha) ######## erro
+        user = authenticate(request, username=email, password=senha) ######## erro
 
         if user:
             login_django(request, user)
-            return HttpResponse('Sucesso!')
+            return HttpResponse( {'success_message': 'Sucesso!'})
         else:
-            return HttpResponse('Credenciais inválidas!')
+            return render(request, 'usuarios/login.html', {'error_message': 'E-mail ou senha inválidos!'})
 
 
 ######## Pagina de cadastro ########
