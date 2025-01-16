@@ -13,7 +13,7 @@ def login(request):
         email = request.POST.get('email')
         senha = request.POST.get('senha')
 
-        user = authenticate(request, username=email, password=senha) ######## erro
+        user = authenticate(username=email, password=senha) ######## erro
 
         if user:
             login_django(request, user)
