@@ -21,7 +21,7 @@
                     {% csrf_token %}
                     <!-- Nome Completo -->
                     <div class="form-floating mb-3">
-                        <input class="form-control" id="name" name="name" type="text" placeholder="Digite seu nome completo" aria-required="true" required/>
+                        <input class="form-control" id="name" name="nome" type="text" placeholder="Digite seu nome completo" aria-required="true" required/>
                         <label for="name">Nome completo</label>
                     </div>
 
@@ -35,6 +35,14 @@
                     <div class="form-floating mb-3">
                         <input class="form-control" id="numberInput" name="numberInput" type="tel" placeholder="(00) 00000-0000" aria-required="true" required/>
                         <label for="numberInput">Número de telefone</label>
+                    </div>
+
+                    <!-- Senha -->
+                    <!-- Campo de Senha -->
+                    <div class="form-floating mb-3">
+                        <input class="form-control" type="password" id="userpassword" name="senha" placeholder="Digite sua senha" aria-required="true" required/>
+                        <label for="userpassword">Senha</label>
+                        <div class="invalid-feedback">Por favor, insira sua senha.</div>
                     </div>
 
                     <!-- Checkbox para seleção de perfil -->                    
