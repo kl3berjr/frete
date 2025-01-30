@@ -1,0 +1,23 @@
+{% extends 'usuarios/home.html' %} 
+
+{% block content %}
+<div class="container mt-5 pt-5"> <!-- Adicionei mt-5 para espaçamento superior e pt-5 para padding -->
+    <div class="profile-header mb-5">
+        <img src="https://via.placeholder.com/100" alt="Foto de Perfil">
+        <h1>Perfil do Fretista</h1>
+    </div>
+    
+    <div class="menu mb-5">
+        <a href="{% url 'conversas' %}"><i>💬</i> Conversas</a>
+        <a href="{% url 'enderecos' %}"><i>📍</i> Endereços</a>
+        <a href="{% url 'dados_da_conta' %}"><i>📋</i> Dados da Conta</a>
+        <a href="{% url 'meus_agendamentos' %}"><i>📅</i> Meus Agendamentos</a>
+    </div>
+    
+    <div class="footer-menu mb-5">
+        <a href="{% url 'configuracoes' %}">Configurações</a>
+        <a href="{% url 'seguranca' %}">Segurança</a>
+        <a href="{% url 'logout' %}">Sair</a>
+    </div>
+</div>
+{% endblock %}
