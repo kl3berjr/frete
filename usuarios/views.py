@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http.response import HttpResponse
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
+from django.contrib.auth.base_user import AbstractBaseUser, BaseUserManager
 from django.contrib.auth import login as login_django
 
 
@@ -26,8 +27,8 @@ def cadastro(request):
 def home(request):
     return render(request, 'usuarios/home.html')
 
-def perfil_fretista(request):
-    return render(request, 'usuarios/perfil_fretista.html')
+def fretista(request):
+    return render(request, 'usuarios/fretista.html')
 
 def conversas(request):
     return render(request, 'usuarios/conversas.html')
