@@ -1,6 +1,10 @@
 {% extends 'usuarios/home.html' %} 
 
-{% block content %}
+{% block conteudo %}
+<title>Frestista</title>
+{% endblock %}
+
+{% block body %}
 <div class="container mt-5 pt-5"> <!-- Adicionei mt-5 para espaçamento superior e pt-5 para padding -->
     <div class="profile-header mb-5">
         <img src="https://via.placeholder.com/100" alt="Foto de Perfil">
@@ -20,6 +24,6 @@
         <a href="{% url 'logout' %}">Sair</a>
     </div>
 </div>
-{% endblock %}
+{% endblock body %}
 <!-- A base do codigo foi estendida -->
 <!-- mais um teste -->
