@@ -9,14 +9,14 @@ def login(request):
     if request.method == "GET":
         return render(request, 'usuarios/login.html')
     else:
-        username = request.POST.get('email')
+        username = request.POST.get('name')
         senha = request.POST.get('senha')
 
         user = authenticate(username=username, password=senha)
 
         if user:
             login_django(request, user)
-            return HttpResponse('Sucesso!')
+            return render(request, 'usuarios/fretista.html')
         else:
             return HttpResponse('Credenciais inválidas!')
 
@@ -26,26 +26,10 @@ def cadastro(request):
 def home(request):
     return render(request, 'usuarios/home.html')
 
+def perfil(request):
+    return render(request, 'usuarios/perfil.html')
+
 def fretista(request):
     return render(request, 'usuarios/fretista.html')
 
-def conversas(request):
-    return render(request, 'usuarios/conversas.html')
 
-def enderecos(request):
-    return render(request, 'usuarios/enderecos.html')
-
-def dados_da_conta(request):
-    return render(request, 'usuarios/dados_da_conta.html')
-
-def meus_agendamentos(request):
-    return render(request, 'usuarios/meus_agendamentos.html')
-
-def configuracoes(request):
-    return render(request, 'usuarios/configuracoes.html')
-
-def seguranca(request):
-    return render(request, 'usuarios/seguranca.html')
-
-def logout_view(request):
-    return render(request, 'usuarios/logout.html')
