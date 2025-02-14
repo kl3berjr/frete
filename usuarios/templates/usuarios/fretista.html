@@ -5,25 +5,31 @@
 {% endblock %}
 
 {% block body %}
+{% csrf_token %}
+<nav class="navbar navbar-expand-lg navbar-purple bg-purple fixed-top" id="mainNav" style="background-color: #7965D5;">
+    <div class="container px-4">
+        <a class="navbar-brand text-white" href="{% url 'home' %}">Frete Agil</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link text-white" href="{% url 'home' %}">Home</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="{% url 'cadastro' %}">Create</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="{% url 'login' %}">Sair</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
 <div class="container mt-5 pt-5"> <!-- Adicionei mt-5 para espaçamento superior e pt-5 para padding -->
     <div class="profile-header mb-5">
-        <img src="https://via.placeholder.com/100" alt="Foto de Perfil">
-        <h1>Perfil do Fretista</h1>
+        <img src="https://img.icons8.com/?size=100&id=15263&format=png&color=000000" alt="Perfil" width="32" height="32"><h2>Perfil do Fretista</h2>
     </div>
     
     <div class="menu mb-5">
-        <a href="{% url 'conversas' %}"><i>💬</i> Conversas</a>
-        <a href="{% url 'enderecos' %}"><i>📍</i> Endereços</a>
-        <a href="{% url 'dados_da_conta' %}"><i>📋</i> Dados da Conta</a>
-        <a href="{% url 'meus_agendamentos' %}"><i>📅</i> Meus Agendamentos</a>
-    </div>
-    
-    <div class="footer-menu mb-5">
-        <a href="{% url 'configuracoes' %}">Configurações</a>
-        <a href="{% url 'seguranca' %}">Segurança</a>
-        <a href="{% url 'logout' %}">Sair</a>
+        <a class="nav-link text-black" href="{'conversas'}"><i>💬</i> Conversas<img src="https://img.icons8.com/?size=100&id=88586&format=png&color=000000" alt="Perfil"width="15" height="15"></a>
+        <a class="nav-link text-black" href="{'enderecos'}"><i>📍</i> Endereços<img src="https://img.icons8.com/?size=100&id=88586&format=png&color=000000" alt="Perfil"width="15" height="15"></a>
+        <a class="nav-link text-black" href="{'dados_da_conta'}"><i>📋</i> Dados da Conta<img src="https://img.icons8.com/?size=100&id=88586&format=png&color=000000" alt="Perfil"width="15" height="15"></a>
+        <a class="nav-link text-black" href="{'meus_agendamentos'}"><i>📅</i> Meus Agendamentos<img src="https://img.icons8.com/?size=100&id=88586&format=png&color=000000" alt="Perfil"width="15" height="15"></a>
     </div>
 </div>
 {% endblock body %}
-<!-- A base do codigo foi estendida -->
-<!-- mais um teste -->
