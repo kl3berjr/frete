@@ -1,78 +1,9 @@
-{% extebds ''usuarios/home.html'' %}
+{% extends 'usuarios/home.html' %}
 
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    {% block conteudo %}
-    <title>Perfil</title>
-    {% endblock %}
-</head>
+{% block content %}
+<title>Perfil</title>
+{% endblock %}
 
-<!-- EDITARO PERFIL PARA USUARIO COMUM -->
+{% block body %}
 
-<body>
-    <head>
-        <title>Perfil</title>
-    </head>
-    {% block body %}
-    <div class="container mt-5">
-        <div class="row justify-content-center">
-            <div class="col-lg-6">
-                <h1 class="mb-4 text-center">Perfil</h1>
-                <form action="{% url 'cadastro' %}" method="POST">
-                    {% csrf_token %}
-                    <!-- Nome Completo -->
-                    <div class="form-floating mb-3">
-                        <label for="name">Nome completo</label>
-                    </div>
-
-                    <!-- Email -->
-                    <div class="form-floating mb-3">
-                        <label for="email">Email</label>
-                    </div>
-
-                    <!-- Telefone -->
-                    <div class="form-floating mb-3">
-                        <label for="numberInput">Número de telefone</label>
-                    </div>
-
-                    <!-- Senha -->
-                    <!-- Campo de Senha -->
-                    <div class="form-floating mb-3">
-                        <input class="form-control" type="password" id="userpassword" name="senha" placeholder="Digite sua senha" aria-required="true" required/>
-                        <label for="userpassword">Senha</label>
-                        <div class="invalid-feedback">Por favor, insira sua senha.</div>
-                    </div>
-
-                    <!-- Checkbox para seleção de perfil -->                    
-                    <div class="mb-3">
-                        <label for="options" class="form-label">Selecione seu perfil:</label>
-                        <div id="options">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" id="prestador" name="role" value="prestador" aria-required="true" required />
-                                <label class="form-check-label" for="prestador">Prestador de serviço</label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" id="solicitante" name="role" value="solicitante" aria-required="true" required />
-                                <label class="form-check-label" for="solicitante">Solicitante de serviço</label>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Botão de editar -->
-                    <div class="d-grid">
-                        <button class="btn btn-primary btn-xl" id="submitButton" type="submit">Editar</button>
-                    </div>
-
-                    <!-- Botão de Salvar -->
-                    <div class="d-grid">
-                        <button class="btn btn-primary btn-xl" id="submitButton" type="submit">Salvar</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-    {% endblock body %}
-    
-</body>
-</html>
+{% endblock body %}
