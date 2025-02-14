@@ -12,8 +12,8 @@
             <form action="{% url 'login' %}" method="POST">
                 {% csrf_token %}
                 <div class="form-floating mb-3">
-                    <input class="form-control" type="email" id="useremail" name="email" placeholder="Digite seu email" aria-required="true" required />
-                    <label for="useremail">Email</label>
+                    <input class="form-control" type="name" id="username" name="name" placeholder="Digite seu nome" aria-required="true" required />
+                    <label for="username">Nome</label>
                 </div>
                 <div class="form-floating mb-3">
                     <input class="form-control" type="password" id="userpassword" name="senha" placeholder="Digite sua senha" aria-required="true" required/>
